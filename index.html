@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Cross Platform Static Web Server</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="Cross Platform Static Web Server">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="filetype.js"></script>
+	<script type="application/javascript" src="script.js"></script>
+</head>
+<body onload="initialize()">
+	<h1 id="content_title"></h1>
+	<div id="options">
+		<span>Options:</span>
+		<button id="view_list" class="button" onclick="setViewMode('list');">View <u>L</u>ist</button>
+		<button id="view_tiles" class="button" onclick="setViewMode('tiles');">View <u>T</u>iles</button>
+		<button id="shutdown" class="button" onclick="shutdown();"><u>S</u>hutdown Server</button>
+	</div>
+	<div id='content'>
+		<div id="home_content">
+			<div class="card-container">
+				<div class="card">
+					<div class="side"><img src="assets/images/zulns.jpg" alt="ZulNs"></div>
+					<div class="side back"><img src="assets/images/merlin.jpg" alt="Merlin Siba"></div>
+				</div>
+				<span></span>
+				<div class="center-text">
+					<a href="#file:/" onclick="loadContent(this.href);">Hit me to browse...</a>
+				</div>
+			</div>
+		</div>
+		<table id="listed_content">
+			<thead>
+				<tr>
+					<th class="filename" colspan="2">Name</th>
+					<th class="filesize">Size</th>
+					<th colspan="2">Modified Time</th>
+				</tr>
+			</thead>
+			<tbody id="listed_body"></tbody>
+		</table>
+		<div id="tiled_content"></div>
+	</div>
+	<button id="author"></button>
+	<div id="blanket"></div>
+	<div id="dialog">
+		<div id="dialog_message"></div>
+		<!--<div id="user_response"></div>-->
+		<input type="text" id="user_answer" value="">
+		<div id="buttons_wrapper">
+			<button id="button_ok" class="button" onclick="closeDialog(true);">Ok</button>
+			<button id="button_cancel" class="button" onclick="closeDialog(false);">Cancel</button>
+		</div>
+	</div>
+	<iframe id="iframe" name="iframe"></iframe>
+	<img id="iframe_close" class="fadeOnHover" src="assets/images/close.png" onclick="closeIframe();">
+</body>
+</html>
